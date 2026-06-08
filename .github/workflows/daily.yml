@@ -2,7 +2,7 @@ name: Morning Bot
 
 on:
   schedule:
-    - cron: '56 16 * * *'  # 6:00 UTC = 8:00 AM France (CEST)
+    - cron: '3 15 * * *'  # 4:00 UTC = 6:00 AM France (CEST)
   workflow_dispatch:      # Allows manual trigger for testing
 
 jobs:
