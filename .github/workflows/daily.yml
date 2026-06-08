@@ -1,0 +1,25 @@
+name: Morning Bot
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # 6:00 UTC = 8:00 AM France (CEST)
+  workflow_dispatch:      # Allows manual trigger for testing
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run bot
+        run: python morning_bot_v2.py
+        
